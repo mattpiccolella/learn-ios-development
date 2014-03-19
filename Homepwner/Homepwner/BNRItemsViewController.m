@@ -24,9 +24,29 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.tableView reloadData];
+    [self updateTableViewForDynamicTypeSize];
 }
 
+- (void)updateTableViewForDynamicTypeSize {
+    static NSDictionary *cellHeightDictionary;
+    
+    if (!cellHeightDictionary) {
+        cellHeightDictionary = @{UIContentSizeCategoryExtraSmall: @44,
+                                 UIContentSizeCategorySmall: @44,
+                                 UIContentSizeCategoryMedium: @44,
+                                 UIContentSizeCategoryLarge: @44,
+                                 UIContentSizeCategoryExtraLarge: @55,
+                                 UIContentSizeCategoryExtraExtraLarge: @65,
+                                 UIContentSizeCategoryExtraExtraExtraLarge: @75
+                                 };
+    }
+    
+    NSString *userSize = [[UIApplication sharedApplication] preferredContentSizeCategory];
+    
+    NSNumber *cellHeight = cellHeightDictionary[userSize];
+    [self.tableView setRowHeight:cellHeight.floatValue];
+    [self.tableView reloadData];
+}
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
     [[BNRItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
 }
@@ -52,6 +72,7 @@
 
 - (instancetype)init {
     self = [super initWithStyle:UITableViewStylePlain];
+    self.view.backgroundColor = [UIColor lightGrayColor];
     if (self) {
         UINavigationItem *navItem = self.navigationItem;
         navItem.title = @"Homepwner";
@@ -62,8 +83,17 @@
         navItem.rightBarButtonItem = bbi;
         
         navItem.leftBarButtonItem = self.editButtonItem;
+        
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self selector:@selector(updateTableViewForDynamicTypeSize) name:UIContentSizeCategoryDidChangeNotification object:nil];
     }
+    
     return self;
+}
+
+- (void)dealloc {
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc removeObserver:self];
 }
 
 - (instancetype)initWithStyle:(UITableViewStyle)style {
