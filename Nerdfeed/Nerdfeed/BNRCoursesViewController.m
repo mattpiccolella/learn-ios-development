@@ -79,7 +79,7 @@
 }
 
 - (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler {
-    NSURLCredential *cred = [NSURLCredential credentialWithUser:@"mjp2220" password:@"buddymatt123" persistence:NSURLCredentialPersistenceForSession];
+    NSURLCredential *cred = [NSURLCredential credentialWithUser:@"mjp2220" password:@"mynonsensepassword" persistence:NSURLCredentialPersistenceForSession];
     completionHandler(NSURLSessionAuthChallengeUseCredential, cred);
 }
 
