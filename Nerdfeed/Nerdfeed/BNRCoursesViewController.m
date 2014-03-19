@@ -7,6 +7,7 @@
 //
 
 #import "BNRCoursesViewController.h"
+#import "BNRWebViewController.h"
 
 @interface BNRCoursesViewController ()
 
@@ -65,6 +66,16 @@
         });
     }];
     [dataTask resume];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *repo = self.repos[indexPath.row];
+    NSURL *URL = [NSURL URLWithString:repo[@"html_url"]];
+    
+    self.webViewController.title = repo[@"name"];
+    self.webViewController.URL = URL;
+    
+    [self.navigationController pushViewController:self.webViewController animated:YES];
 }
 
 @end
