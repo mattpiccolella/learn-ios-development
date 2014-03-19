@@ -9,7 +9,7 @@
 #import "BNRCoursesViewController.h"
 #import "BNRWebViewController.h"
 
-@interface BNRCoursesViewController ()
+@interface BNRCoursesViewController () <NSURLSessionDataDelegate>
 
 @property (nonatomic) NSURLSession *session;
 @property (nonatomic, copy) NSMutableArray *repos;
@@ -43,7 +43,7 @@
         self.navigationItem.title = @"BNR Courses";
         
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-        _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
+        _session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
         
         [self fetchFeed];
     }
@@ -76,6 +76,11 @@
     self.webViewController.URL = URL;
     
     [self.navigationController pushViewController:self.webViewController animated:YES];
+}
+
+- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler {
+    NSURLCredential *cred = [NSURLCredential credentialWithUser:@"mjp2220" password:@"buddymatt123" persistence:NSURLCredentialPersistenceForSession];
+    completionHandler(NSURLSessionAuthChallengeUseCredential, cred);
 }
 
 @end
