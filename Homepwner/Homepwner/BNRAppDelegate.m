@@ -12,18 +12,36 @@
 
 @implementation BNRAppDelegate
 
+- (UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder {
+    UIViewController *vc = [[UINavigationController alloc] init];
+    
+    vc.restorationIdentifier = [identifierComponents lastObject];
+    
+    if ([identifierComponents count] == 1) {
+        self.window.rootViewController = vc;
+    }
+    return vc;
+}
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    return YES;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    if (!self.window.rootViewController) {
     
-    BNRItemsViewController *ivc = [[BNRItemsViewController alloc] init];
+        BNRItemsViewController *ivc = [[BNRItemsViewController alloc] init];
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:ivc];
-    self.window.rootViewController = navController
-    ;
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:ivc];
     
-    self.window.backgroundColor = [UIColor whiteColor];
+        navController.restorationIdentifier = NSStringFromClass([navController class]);
+    
+        self.window.rootViewController = navController;
+    }
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -60,4 +78,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder {
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder {
+    return YES;
+}
 @end
