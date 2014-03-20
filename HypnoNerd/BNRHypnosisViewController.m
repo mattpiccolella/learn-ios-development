@@ -10,6 +10,7 @@
 #import "BNRHypnosisView.h"
 
 @interface BNRHypnosisViewControler () <UITextFieldDelegate>
+@property (nonatomic, weak) UITextField *textField;
 @end
 
 @implementation BNRHypnosisViewControler
@@ -19,7 +20,7 @@
         UILabel *messageLabel = [[UILabel alloc] init];
         
         messageLabel.backgroundColor = [UIColor clearColor];
-        messageLabel.textColor = [UIColor whiteColor];
+        messageLabel.textColor = [UIColor blueColor];
         messageLabel.text = message;
         
         [messageLabel sizeToFit];
@@ -35,6 +36,26 @@
         messageLabel.frame = frame;
         
         [self.view addSubview:messageLabel];
+        
+        messageLabel.alpha = 0.0;
+        
+        [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            messageLabel.alpha = 1.0;
+        } completion:NULL];
+        
+        [UIView animateKeyframesWithDuration:1.0 delay:0.0 options:0 animations:^{
+            [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.8 animations:^{
+                messageLabel.center = self.view.center;
+            }];
+            
+            [UIView addKeyframeWithRelativeStartTime:0.8 relativeDuration:0.2 animations:^{
+                int x = arc4random() % width;
+                int y = arc4random() % height;
+                messageLabel.center = CGPointMake(x, y);
+            }];
+        } completion:^(BOOL finished) {
+            NSLog(@"Animated finished");
+        }];
         
         UIInterpolatingMotionEffect *motionEffect;
         motionEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
@@ -63,9 +84,8 @@
     
     [backgroundView addSubview:textField];
     
+    self.textField = textField;
     self.view = backgroundView;
-                             
-        
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -95,6 +115,15 @@
     }
     
     return self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [UIView animateWithDuration:2.0 delay:0.0 options:0.25 animations:^{
+        CGRect frame = CGRectMake(40, 70, 240, 30);
+        self.textField.frame = frame;
+    } completion:NULL];
 }
 
 @end
