@@ -13,6 +13,7 @@
 		5C1114F518DA7D11006CD7D0 /* Homepwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C1114F318DA7D11006CD7D0 /* Homepwner.xcdatamodeld */; };
 		5C1114F818DA7E40006CD7D0 /* BNRImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1114F718DA7E40006CD7D0 /* BNRImageTransformer.m */; };
 		5C1114FB18DA80BE006CD7D0 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1114FA18DA80BE006CD7D0 /* BNRItem.m */; };
+		5C1114FE18DA884B006CD7D0 /* BNRAssetTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1114FD18DA884B006CD7D0 /* BNRAssetTypeViewController.m */; };
 		5CB738B318D505EE009C63A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CB738B218D505EE009C63A4 /* Foundation.framework */; };
 		5CB738B518D505EE009C63A4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CB738B418D505EE009C63A4 /* CoreGraphics.framework */; };
 		5CB738B718D505EE009C63A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CB738B618D505EE009C63A4 /* UIKit.framework */; };
@@ -53,6 +54,8 @@
 		5C1114F718DA7E40006CD7D0 /* BNRImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageTransformer.m; sourceTree = "<group>"; };
 		5C1114F918DA80BE006CD7D0 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
 		5C1114FA18DA80BE006CD7D0 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
+		5C1114FC18DA884B006CD7D0 /* BNRAssetTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRAssetTypeViewController.h; sourceTree = "<group>"; };
+		5C1114FD18DA884B006CD7D0 /* BNRAssetTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRAssetTypeViewController.m; sourceTree = "<group>"; };
 		5CB738AF18D505EE009C63A4 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB738B218D505EE009C63A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5CB738B418D505EE009C63A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -141,6 +144,8 @@
 				5C1114FA18DA80BE006CD7D0 /* BNRItem.m */,
 				5CB738EA18D5091B009C63A4 /* BNRItemStore.h */,
 				5CB738EB18D5091B009C63A4 /* BNRItemStore.m */,
+				5C1114FC18DA884B006CD7D0 /* BNRAssetTypeViewController.h */,
+				5C1114FD18DA884B006CD7D0 /* BNRAssetTypeViewController.m */,
 				5CB738E418D506D6009C63A4 /* BNRItemsViewController.h */,
 				5CB738E518D506D6009C63A4 /* BNRItemsViewController.m */,
 				5C1114AF18D9FF3E006CD7D0 /* BNRImageViewController.h */,
@@ -293,6 +298,7 @@
 			files = (
 				5CB738F218D542F4009C63A4 /* BNRDetailViewController.m in Sources */,
 				5C1114AC18D9EC14006CD7D0 /* BNRItemCell.m in Sources */,
+				5C1114FE18DA884B006CD7D0 /* BNRAssetTypeViewController.m in Sources */,
 				5C1114B118D9FF3E006CD7D0 /* BNRImageViewController.m in Sources */,
 				5CB738EC18D5091B009C63A4 /* BNRItemStore.m in Sources */,
 				5CB738F618D74E8C009C63A4 /* BNRImageStore.m in Sources */,
