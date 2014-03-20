@@ -20,6 +20,9 @@
 		5C11153618DAB217006CD7D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C11153418DAB217006CD7D0 /* InfoPlist.strings */; };
 		5C11153818DAB217006CD7D0 /* ColorboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C11153718DAB217006CD7D0 /* ColorboardTests.m */; };
 		5C11154218DAB23A006CD7D0 /* Colorboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C11154118DAB23A006CD7D0 /* Colorboard.storyboard */; };
+		5C11154518DAB778006CD7D0 /* BNRColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C11154418DAB778006CD7D0 /* BNRColorViewController.m */; };
+		5C11154818DABBD8006CD7D0 /* BNRPaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C11154718DABBD8006CD7D0 /* BNRPaletteViewController.m */; };
+		5C11154B18DABCC2006CD7D0 /* BNRColorDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C11154A18DABCC2006CD7D0 /* BNRColorDescription.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,12 @@
 		5C11153518DAB217006CD7D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5C11153718DAB217006CD7D0 /* ColorboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorboardTests.m; sourceTree = "<group>"; };
 		5C11154118DAB23A006CD7D0 /* Colorboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Colorboard.storyboard; sourceTree = "<group>"; };
+		5C11154318DAB778006CD7D0 /* BNRColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRColorViewController.h; sourceTree = "<group>"; };
+		5C11154418DAB778006CD7D0 /* BNRColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRColorViewController.m; sourceTree = "<group>"; };
+		5C11154618DABBD8006CD7D0 /* BNRPaletteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRPaletteViewController.h; sourceTree = "<group>"; };
+		5C11154718DABBD8006CD7D0 /* BNRPaletteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRPaletteViewController.m; sourceTree = "<group>"; };
+		5C11154918DABCC2006CD7D0 /* BNRColorDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRColorDescription.h; sourceTree = "<group>"; };
+		5C11154A18DABCC2006CD7D0 /* BNRColorDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRColorDescription.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +123,12 @@
 				5C11152418DAB217006CD7D0 /* Images.xcassets */,
 				5C11151918DAB217006CD7D0 /* Supporting Files */,
 				5C11154118DAB23A006CD7D0 /* Colorboard.storyboard */,
+				5C11154618DABBD8006CD7D0 /* BNRPaletteViewController.h */,
+				5C11154718DABBD8006CD7D0 /* BNRPaletteViewController.m */,
+				5C11154918DABCC2006CD7D0 /* BNRColorDescription.h */,
+				5C11154A18DABCC2006CD7D0 /* BNRColorDescription.m */,
+				5C11154318DAB778006CD7D0 /* BNRColorViewController.h */,
+				5C11154418DAB778006CD7D0 /* BNRColorViewController.m */,
 			);
 			path = Colorboard;
 			sourceTree = "<group>";
@@ -245,7 +260,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C11151F18DAB217006CD7D0 /* main.m in Sources */,
+				5C11154818DABBD8006CD7D0 /* BNRPaletteViewController.m in Sources */,
+				5C11154B18DABCC2006CD7D0 /* BNRColorDescription.m in Sources */,
 				5C11152318DAB217006CD7D0 /* BNRAppDelegate.m in Sources */,
+				5C11154518DAB778006CD7D0 /* BNRColorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
