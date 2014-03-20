@@ -75,7 +75,9 @@
     self.webViewController.title = repo[@"name"];
     self.webViewController.URL = URL;
     
-    [self.navigationController pushViewController:self.webViewController animated:YES];
+    if (!self.splitViewController) {
+        [self.navigationController pushViewController:self.webViewController animated:YES];
+    }
 }
 
 - (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler {
