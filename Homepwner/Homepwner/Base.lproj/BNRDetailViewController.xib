@@ -24,6 +24,9 @@
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pme-Xp-LrD">
                     <rect key="frame" x="30" y="93" width="52" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="0mQ-Gb-oSQ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -103,6 +106,7 @@
             <constraints>
                 <constraint firstItem="gXc-01-ssM" firstAttribute="leading" secondItem="RWU-zU-Adu" secondAttribute="trailing" constant="27" id="05j-EI-JPt"/>
                 <constraint firstAttribute="trailing" secondItem="gXc-01-ssM" secondAttribute="trailing" constant="31" id="0Vt-Qq-cns"/>
+                <constraint firstItem="RWU-zU-Adu" firstAttribute="width" secondItem="11N-g2-qah" secondAttribute="width" id="1ek-rE-sCR"/>
                 <constraint firstItem="gXc-01-ssM" firstAttribute="baseline" secondItem="RWU-zU-Adu" secondAttribute="baseline" constant="-1" id="6ZJ-pj-njO"/>
                 <constraint firstItem="11N-g2-qah" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="27" id="8gq-dl-7Sm"/>
                 <constraint firstItem="Pme-Xp-LrD" firstAttribute="baseline" secondItem="VPi-56-gYs" secondAttribute="baseline" id="9rF-L1-vdK"/>
@@ -120,12 +124,11 @@
                 <constraint firstAttribute="bottom" secondItem="fd4-ed-SPp" secondAttribute="bottom" id="U4y-fo-F8C"/>
                 <constraint firstItem="JQP-xq-s2v" firstAttribute="top" secondItem="gXc-01-ssM" secondAttribute="bottom" constant="20" id="Vay-kD-C9C"/>
                 <constraint firstItem="JQP-xq-s2v" firstAttribute="leading" secondItem="RWU-zU-Adu" secondAttribute="leading" id="XNz-8w-Lm8"/>
-                <constraint firstItem="11N-g2-qah" firstAttribute="width" secondItem="RWU-zU-Adu" secondAttribute="width" id="XWr-TQ-Df4"/>
                 <constraint firstAttribute="trailing" secondItem="LwY-dw-Qgw" secondAttribute="trailing" constant="31" id="Zsv-g0-TTz"/>
                 <constraint firstItem="11N-g2-qah" firstAttribute="top" secondItem="Pme-Xp-LrD" secondAttribute="bottom" constant="17" id="apx-rz-bAU"/>
                 <constraint firstItem="RWU-zU-Adu" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="32" id="bgg-CU-kAv"/>
-                <constraint firstItem="11N-g2-qah" firstAttribute="width" secondItem="Pme-Xp-LrD" secondAttribute="width" id="cKY-WQ-XU2"/>
                 <constraint firstAttribute="trailing" secondItem="VPi-56-gYs" secondAttribute="trailing" constant="31" id="dBj-gK-vUO"/>
+                <constraint firstItem="11N-g2-qah" firstAttribute="width" secondItem="Pme-Xp-LrD" secondAttribute="width" id="pbD-g3-e2o"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
